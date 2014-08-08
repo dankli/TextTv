@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{D219BC04-4B18-49AC-8716-59B0B0464E4D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TextTv.Shared</RootNamespace>
+    <AssemblyName>TextTv.Shared</AssemblyName>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Infrastructure\ApiCaller.cs" />
+    <Compile Include="Infrastructure\Contracts\IAppResources.cs" />
+    <Compile Include="Infrastructure\Contracts\IHtmlParserFactory.cs" />
+    <Compile Include="Infrastructure\Contracts\IHtmlParserIO.cs" />
+    <Compile Include="Infrastructure\Contracts\ILocalSettingsProvider.cs" />
+    <Compile Include="Infrastructure\Contracts\INotifierTaskHandler.cs" />
+    <Compile Include="Infrastructure\Contracts\ISyncPagesIO.cs" />
+    <Compile Include="Infrastructure\HtmlParser.cs" />
+    <Compile Include="Infrastructure\ModeHandler.cs" />
+    <Compile Include="Infrastructure\PageNumberHandler.cs" />
+    <Compile Include="Infrastructure\SyncPages.cs" />
+    <Compile Include="Infrastructure\TextTvMode.cs" />
+    <Compile Include="Infrastructure\Viewer.cs" />
+    <Compile Include="Model\MonitorPage.cs" />
+    <Compile Include="Model\MonitorTimespan.cs" />
+    <Compile Include="Model\PageInfo.cs" />
+    <Compile Include="Model\ResponseResult.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack-PCL">
+      <HintPath>..\packages\HtmlAgilityPack-PCL.1.4.6\lib\HtmlAgilityPack-PCL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HtmlResources\css\hammer.min.js" />
+    <Content Include="HtmlResources\css\jquery-2.1.1.min.js" />
+    <Content Include="HtmlResources\css\svttextstyle.css" />
+    <Content Include="HtmlResources\pageTemplate - Copy.html" />
+    <Content Include="HtmlResources\textTvExample.html" />
+    <Content Include="HtmlResources\textWebExample.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HtmlResources\css\localstyleTv.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlResources\css\localstyleWeb.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlResources\css\phoneTv.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlResources\css\phoneWeb.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlResources\pageTemplate.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
