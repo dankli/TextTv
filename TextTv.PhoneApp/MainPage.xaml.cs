@@ -1,28 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
-using Windows.ApplicationModel.Resources;
 using Windows.Graphics.Display;
 using Windows.Graphics.Imaging;
-using Windows.Media.Capture;
-using Windows.Phone.UI.Input;
 using Windows.Storage;
-using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-
 using Newtonsoft.Json;
-using TextTv.AppContext.Infrastructure;
-using TextTv.AppContext.Model;
 using TextTv.PhoneApp.Infrastructure;
+using TextTv.Shared.Infrastructure;
+using TextTv.Shared.Model;
 using TextTv.Windows.AppContext;
 using AppResources = TextTv.PhoneApp.Infrastructure.AppResources;
 

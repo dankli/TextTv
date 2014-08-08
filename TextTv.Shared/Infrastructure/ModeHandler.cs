@@ -1,7 +1,7 @@
 ﻿using System;
-using TextTv.AppContext.Infrastructure.Contracts;
+using TextTv.Shared.Infrastructure.Contracts;
 
-namespace TextTv.AppContext.Infrastructure
+namespace TextTv.Shared.Infrastructure
 {
     public class ModeHandler
     {

@@ -1,5 +1,5 @@
 ﻿using Windows.ApplicationModel.Resources;
-using TextTv.AppContext.Infrastructure.Contracts;
+using TextTv.Shared.Infrastructure.Contracts;
 
 namespace TextTv.PhoneApp.Infrastructure
 {

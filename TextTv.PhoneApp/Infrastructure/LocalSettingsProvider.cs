@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.Storage;
-using Windows.UI.Xaml.Controls;
-using TextTv.AppContext.Infrastructure.Contracts;
+﻿using Windows.Storage;
+using TextTv.Shared.Infrastructure.Contracts;
 
 namespace TextTv.PhoneApp.Infrastructure
 {

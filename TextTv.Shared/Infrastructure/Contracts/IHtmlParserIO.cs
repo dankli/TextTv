@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-namespace TextTv.AppContext.Infrastructure.Contracts
+namespace TextTv.Shared.Infrastructure.Contracts
 {
     public interface IHtmlParserIO
     {

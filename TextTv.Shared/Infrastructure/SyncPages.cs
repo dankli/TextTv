@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using TextTv.AppContext.Infrastructure.Contracts;
-using TextTv.AppContext.Model;
+using TextTv.Shared.Infrastructure.Contracts;
+using TextTv.Shared.Model;
 
-namespace TextTv.AppContext.Infrastructure
+namespace TextTv.Shared.Infrastructure
 {
     public class SyncPages
     {

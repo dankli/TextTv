@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.Data.Xml.Dom;
 using Windows.UI.Notifications;
-using TextTv.AppContext.Infrastructure;
-using TextTv.AppContext.Model;
+using TextTv.Shared.Infrastructure;
+using TextTv.Shared.Model;
 using TextTv.Windows.AppContext;
 
 namespace TextTv.Background

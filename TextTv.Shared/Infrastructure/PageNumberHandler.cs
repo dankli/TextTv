@@ -1,4 +1,4 @@
-﻿namespace TextTv.AppContext.Infrastructure
+﻿namespace TextTv.Shared.Infrastructure
 {
     public class PageNumberHandler
     {

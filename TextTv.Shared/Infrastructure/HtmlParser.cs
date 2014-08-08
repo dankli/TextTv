@@ -3,9 +3,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
-using TextTv.AppContext.Infrastructure.Contracts;
+using TextTv.Shared.Infrastructure.Contracts;
 
-namespace TextTv.AppContext.Infrastructure
+namespace TextTv.Shared.Infrastructure
 {
     public class HtmlParser
     {

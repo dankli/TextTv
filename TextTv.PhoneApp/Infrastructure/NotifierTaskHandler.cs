@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
-using TextTv.AppContext.Infrastructure.Contracts;
+using TextTv.Shared.Infrastructure.Contracts;
 
 namespace TextTv.PhoneApp.Infrastructure
 {

@@ -1,13 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using TextTv.AppContext.Model;
+using TextTv.Shared.Model;
 
-namespace TextTv.AppContext.Infrastructure
+namespace TextTv.Shared.Infrastructure
 {
     public class ApiCaller
     {

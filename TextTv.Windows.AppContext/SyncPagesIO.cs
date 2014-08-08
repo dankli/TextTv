@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Windows.Storage;
 using Newtonsoft.Json;
-using TextTv.AppContext.Infrastructure.Contracts;
-using TextTv.AppContext.Model;
+using TextTv.Shared.Infrastructure.Contracts;
+using TextTv.Shared.Model;
 
 namespace TextTv.Windows.AppContext
 {

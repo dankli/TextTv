@@ -150,8 +150,9 @@
     <Reference Include="HtmlAgilityPack-PCL">
       <HintPath>..\packages\HtmlAgilityPack-PCL.1.4.6\lib\HtmlAgilityPack-PCL.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\wpa81\System.Net.Http.Extensions.dll</HintPath>
@@ -165,13 +166,13 @@
     <PRIResource Include="Strings\sv-SE\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TextTv.AppContext\TextTv.AppContext.csproj">
-      <Project>{89d3ae1c-34a0-4e53-8c1d-6722cdfd5d49}</Project>
-      <Name>TextTv.AppContext</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TextTv.Background\TextTv.Background.csproj">
       <Project>{b44f957b-fd53-49ce-b8d6-ff3544d563d5}</Project>
       <Name>TextTv.Background</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextTv.Shared\TextTv.Shared.csproj">
+      <Project>{d219bc04-4b18-49ac-8716-59b0b0464e4d}</Project>
+      <Name>TextTv.Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\TextTv.Windows.AppContext\TextTv.Windows.AppContext.csproj">
       <Project>{ab5bc041-89ab-4426-8825-9ac8879ba6e2}</Project>

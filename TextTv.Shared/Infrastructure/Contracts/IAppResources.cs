@@ -1,4 +1,4 @@
-﻿namespace TextTv.AppContext.Infrastructure.Contracts
+﻿namespace TextTv.Shared.Infrastructure.Contracts
 {
     public interface IAppResources
     {

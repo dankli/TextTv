@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TextTv.AppContext.Infrastructure;
-using TextTv.AppContext.Infrastructure.Contracts;
-using TextTv.PhoneApp.Infrastructure.IO;
+﻿using TextTv.PhoneApp.Infrastructure.IO;
+using TextTv.Shared.Infrastructure;
+using TextTv.Shared.Infrastructure.Contracts;
 
 namespace TextTv.PhoneApp.Infrastructure
 {

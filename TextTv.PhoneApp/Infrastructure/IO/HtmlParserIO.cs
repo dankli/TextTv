@@ -1,10 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.Storage;
-using TextTv.AppContext.Infrastructure.Contracts;
+using TextTv.Shared.Infrastructure.Contracts;
 
 namespace TextTv.PhoneApp.Infrastructure.IO
 {
@@ -46,9 +44,9 @@ namespace TextTv.PhoneApp.Infrastructure.IO
 
         private async Task<string> GetPageTemplateResource()
         {
-            Assembly assembly = Assembly.Load(new AssemblyName("TextTv.AppContext"));
+            Assembly assembly = Assembly.Load(new AssemblyName("TextTv.Shared"));
 
-            using (Stream stream = assembly.GetManifestResourceStream(@"TextTv.AppContext.HtmlResources.pageTemplate.html"))
+            using (Stream stream = assembly.GetManifestResourceStream(@"TextTv.Shared.HtmlResources.pageTemplate.html"))
             using (StreamReader reader = new StreamReader(stream))
             {
                 return await reader.ReadToEndAsync();
@@ -73,9 +71,9 @@ namespace TextTv.PhoneApp.Infrastructure.IO
 
         private async Task<string> GetCssContentFrom(string css)
         {
-            Assembly assembly = Assembly.Load(new AssemblyName("TextTv.AppContext"));
+            Assembly assembly = Assembly.Load(new AssemblyName("TextTv.Shared"));
 
-            using (Stream stream = assembly.GetManifestResourceStream(@"TextTv.AppContext.HtmlResources.css." + css))
+            using (Stream stream = assembly.GetManifestResourceStream(@"TextTv.Shared.HtmlResources.css." + css))
             using(StreamReader reader = new StreamReader(stream))
             {
                 return await reader.ReadToEndAsync();

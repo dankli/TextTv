@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using TextTv.AppContext.Model;
+using TextTv.Shared.Model;
 
-namespace TextTv.AppContext.Infrastructure.Contracts
+namespace TextTv.Shared.Infrastructure.Contracts
 {
     public interface ISyncPagesIO
     {
