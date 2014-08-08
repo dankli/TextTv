@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    
+    <title>
+    </title>
+    %%styles%%
+    %%scripts%%
+    
+    <script type="text/javascript">
+        var myGesture, startX, startY;
+        
+        var down = function (e) {
+            if (e.type == "pointerdown") {
+                myGesture.addPointer(e.pointerId);
+                return;
+            }
+            startX = e.clientX;
+            startY = e.clientY;
+        };
+
+        var swipeHandled = false;
+        var move = function (e) {
+            if (startY - e.clientY > 50 || e.clientY - startY > 50) {
+                return;
+            }
+
+            if (startX - e.clientX > 50) {
+                if (swipeHandled === false) {
+                    swipeHandled = true;
+                    window.external.notify("swipe:left");
+                }
+                
+            } else if (e.clientX - startX > 50) {
+                if (swipeHandled === false) {
+                    swipeHandled = true;
+                    window.external.notify("swipe:right");
+                }
+            }
+        };
+
+
+        var onload = function() {
+            myGesture = new MSGesture();
+            var element = document.body;
+            myGesture.target = element;
+
+            element.addEventListener("pointerdown", down, false);
+            element.addEventListener("MSGestureStart", down, false);
+            element.addEventListener("MSGestureChange", move, false);
+        }
+
+    </script>
+
+</head>
+<body onload="onload()">
+    %%content%%
+</body>
+</html>

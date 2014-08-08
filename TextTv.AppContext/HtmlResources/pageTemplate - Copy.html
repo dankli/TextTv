@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>
+    </title>
+    <style>
+        .debug-invalid:before {
+            content: 'invalid';
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Rub1</th>
+                <th>Rub2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Rad1 col1</td>
+                <td>Rad1 col2</td>
+            </tr>
+            <tr class="debug-invalid">
+                <td>Rad2 col1</td>
+                <td>Rad2 col2</td>
+            </tr>
+            <tr>
+                <td>Rad3 col1</td>
+                <td>Rad3 col2</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿/* web */
+pre.root {
+     	font-size: 14px;
+    
+}
+pre.sub {
+    border-top: 1px solid #BBB;
+    margin-top: 5px;
+}
+.root a { color: #000066; }
+.BK { color: #000;}
+.bgBK { }
+.C {color: #006666;}
+.bgC { }
+.G  {color: #006600;}
+.bgG { }
+.M  {color: #660066;}
+.bgM { }
+.R  { color: #660000;}
+.bgR { }
+.W  { color: #333;}
+.bgW { }
+.Y  { color: #666600;}
+.bgY { }
+.B  { color: #333366;}
+.bgB { }
+.DH { font-weight: bold; } 

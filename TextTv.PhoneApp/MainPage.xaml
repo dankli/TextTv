@@ -1,0 +1,160 @@
+﻿<Page
+    x:Class="TextTv.PhoneApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TextTv.PhoneApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid HorizontalAlignment="Stretch" 
+          Background="Transparent"
+          VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ProgressBar Grid.Row="0" x:Name="bar" Visibility="Collapsed" IsIndeterminate="True"  Height="20"  Width="200" Background="lightBlue" />
+
+        <WebView x:Name="WebViewControl"
+             Grid.Row="1"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             NavigationCompleted="Browser_NavigationCompleted" />
+        <Popup x:Name="popSetNumber" 
+           Grid.Row="0"
+           Margin="0 10 0 0"
+           IsOpen="false" 
+           HorizontalAlignment="Stretch">
+            <Border BorderThickness="1" Background="Gray" BorderBrush="White" x:Name="popBorder">
+                <Grid Background="Transparent" 
+                        HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"
+                           FontSize="18"
+                           Foreground="Black"
+                           Margin="0 0 10 0"
+                           Text="Ange sida" 
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"></TextBlock>
+                    <TextBox x:Name="tbSetCurrent" Grid.Column="1"
+                         BorderBrush="Black"
+                         Width="70"
+                         InputScope="Number" 
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                             LostFocus="TbSetCurrent_OnLostFocus"
+                         TextChanged="TbSetCurrent_OnTextChanged"></TextBox>
+                </Grid>
+            </Border>
+        </Popup>
+        <Popup x:Name="popMonitorPage" 
+           Grid.Row="0"
+           Margin="0 10 0 0"
+           IsOpen="false" 
+           HorizontalAlignment="Stretch">
+            <Border BorderThickness="1" 
+                    Padding="10 10 10 10"
+                    Background="Gray" 
+                    BorderBrush="White" 
+                    x:Name="popSyncBorder">
+                <Grid Background="Transparent" 
+                        HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Uid="lblMonitorPage"
+                        Grid.Column="0"
+                           FontSize="18"
+                           Foreground="Black"
+                           Margin="0 0 10 0"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"></TextBlock>
+                    <ComboBox x:Name="CbmTimeSpanComboBox"
+                              x:Uid="cbmTimeSpan"
+                                Grid.Row="1" 
+                              SelectionChanged="CbmTimeSpanComboBox_OnSelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Text}"></TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </Grid>
+            </Border>
+        </Popup>
+        <Popup x:Name="popNoConnection" 
+           Grid.Row="0"
+           Margin="0 10 0 0"
+           IsOpen="false" 
+           HorizontalAlignment="Stretch">
+            <Border BorderThickness="1" Background="Gray" BorderBrush="White" x:Name="popBorderNoConnection">
+                <Grid Background="Transparent" 
+                        HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Uid="lblNoInternetConnection"
+                                Grid.Row="0" 
+                               Margin="10 10 10 10"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></TextBlock>
+                    <Button Grid.Row="1" 
+                            Content="Ok" 
+                            HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                            Click="ButtonBase_OnClick"></Button>
+                </Grid>
+            </Border>
+        </Popup>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton
+                    x:Name="BackAppBarButton"
+                    x:Uid="BackAppBarButton"
+                    Click="BackAppBarButton_Click"
+                    Icon="Back"/>
+                <AppBarButton
+                    x:Name="RefreshAppBarButton"
+                    x:Uid="RefreshAppBarButton"
+                    Click="RefreshAppBarButton_Click"
+                    Icon="Refresh"/>
+                <AppBarButton
+                    x:Name="SetCurrentAppBarButton"
+                    x:Uid="SetCurrentAppBarButton"
+                    Click="SetCurrentAppBarButton_Click"
+                    Icon="Edit"/>
+                <AppBarButton
+                    x:Name="ForwardAppBarButton"
+                    x:Uid="ForwardAppBarButton"
+                    Click="ForwardAppBarButton_Click"
+                    Icon="Forward"/>
+            </CommandBar.PrimaryCommands>
+            <CommandBar.SecondaryCommands>
+                <AppBarToggleButton
+                    x:Name="SyncAppBarButton"
+                    x:Uid="SyncAppBarButton"
+                    Click="SyncAppBarButton_OnClick"/>
+                <AppBarToggleButton
+                    x:Name="ThemeAppBarButton"
+                    x:Uid="ThemeAppBarButton"
+                    Click="ThemeAppBarButton_OnClick"/>
+                <AppBarToggleButton
+                    x:Name="ScreenShotButton"
+                    x:Uid="ScreenShotButton"
+                    Click="ScreenShotButton_OnClick"
+                    Label="ta ett screen shot"/>
+            </CommandBar.SecondaryCommands>
+            
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
