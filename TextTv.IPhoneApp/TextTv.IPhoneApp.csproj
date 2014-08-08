@@ -87,10 +87,6 @@
     <Reference Include="System.Web.Services" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Model1.cs" />
-    <Compile Include="Views\RazorView.cs">
-      <DependentUpon>RazorView.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="HybridViewController.cs" />
@@ -99,18 +95,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\RazorView.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-    </None>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Resources\style.css" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\TextTv.Shared\TextTv.Shared.csproj">
+      <Project>{D219BC04-4B18-49AC-8716-59B0B0464E4D}</Project>
+      <Name>TextTv.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
