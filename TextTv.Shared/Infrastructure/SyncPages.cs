@@ -13,7 +13,7 @@ namespace TextTv.Shared.Infrastructure
         private readonly ApiCaller apiCaller;
         private readonly ISyncPagesIO _syncPagesIo;
 
-        public SyncPages(ApiCaller caller, ISyncPagesIO syncPagesIo)
+    	public SyncPages(ApiCaller caller, ISyncPagesIO syncPagesIo)
         {
             this.apiCaller = caller;
             _syncPagesIo = syncPagesIo;
