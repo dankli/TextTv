@@ -31,6 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\AppResources.cs" />
+    <Compile Include="Infrastructure\HtmlParserFactory.cs" />
+    <Compile Include="Infrastructure\HtmlParserIO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\ApiCaller.cs" />
     <Compile Include="Infrastructure\Contracts\IHtmlParserFactory.cs" />
