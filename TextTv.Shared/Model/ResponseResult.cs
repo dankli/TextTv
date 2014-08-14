@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace TextTv.Shared.Model
 {
     public class ResponseResult
