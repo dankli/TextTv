@@ -11,7 +11,7 @@ namespace TextTv.Shared.Infrastructure
 
         private readonly Action<string> _setTextAction;
 
-        public ModeHandler(IAppResources appResources, ILocalSettingsProvider localSettings, Action<string> setTextAction)
+        public ModeHandler(AppResources appResources, ILocalSettingsProvider localSettings, Action<string> setTextAction)
         {
             _localSettings = localSettings;
             WEB_TEXT = appResources.Get("ThemeWeb");

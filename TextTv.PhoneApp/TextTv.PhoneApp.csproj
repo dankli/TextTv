@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TextTv.PhoneApp</RootNamespace>
     <AssemblyName>TextTv.PhoneApp</AssemblyName>
-    <DefaultLanguage>sv-SE</DefaultLanguage>
+    <DefaultLanguage>sv-se</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -82,7 +82,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\AppResources.cs" />
     <Compile Include="Infrastructure\HtmlParserFactory.cs" />
     <Compile Include="Infrastructure\IO\HtmlParserIO.cs" />
     <Compile Include="Infrastructure\LocalSettingsProvider.cs" />
@@ -142,11 +141,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Strings\en-US\Resources.resw">
-      <SubType>Designer</SubType>
-    </PRIResource>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="HtmlAgilityPack-PCL">
       <HintPath>..\packages\HtmlAgilityPack-PCL.1.4.6\lib\HtmlAgilityPack-PCL.dll</HintPath>
     </Reference>
@@ -163,7 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <PRIResource Include="Strings\sv-SE\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TextTv.Background\TextTv.Background.csproj">
