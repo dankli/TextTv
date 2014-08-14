@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ using TextTv.PhoneApp.Infrastructure;
 using TextTv.Shared.Infrastructure;
 using TextTv.Shared.Model;
 using TextTv.Windows.AppContext;
-using AppResources = TextTv.PhoneApp.Infrastructure.AppResources;
+using AppResources = TextTv.Shared.Infrastructure.AppResources;
 
 namespace TextTv.PhoneApp
 {
@@ -38,8 +39,8 @@ namespace TextTv.PhoneApp
             this.Loaded += OnLoaded;
             this.apiCaller = new ApiCaller();
             this.pageNumberHandler = new PageNumberHandler(100);
-            this.appResources = new AppResources();
-            this.modeHandler = new ModeHandler(new AppResources(), new LocalSettingsProvider(),  s => this.ThemeAppBarButton.Label = s);
+            this.appResources = new AppResources(CultureInfo.CurrentCulture.Name);
+            this.modeHandler = new ModeHandler(this.appResources, new LocalSettingsProvider(), s => this.ThemeAppBarButton.Label = s);
             this.notifier = new NotifierTaskHandler(this.SetSyncBarAppText);
             this.htmlParserFactory = new HtmlParserFactory();
 
@@ -69,7 +70,18 @@ namespace TextTv.PhoneApp
                 }   
             }
 
-            this.SetSyncBarAppText();    
+            this.SetSyncBarAppText();
+
+            this.txtSetNumber.Text = this.appResources.Get("SetCurrentAppBarButton.Label");
+            this.lblMonitorPage.Text = this.appResources.Get("lblMonitorPage.Text");
+            this.CbmTimeSpanComboBox.PlaceholderText = this.appResources.Get("cbmTimeSpan.PlaceholderText");
+            this.lblNoInternetConnection.Text = this.appResources.Get("lblNoInternetConnection.Text");
+            this.btnConfirmNoConnection.Content = this.appResources.Get("Ok");
+            this.BackAppBarButton.Label = this.appResources.Get("BackAppBarButton.Label");
+            this.RefreshAppBarButton.Label = this.appResources.Get("RefreshAppBarButton.Label");
+            this.SetCurrentAppBarButton.Label = this.appResources.Get("SetCurrentAppBarButton.Label");
+            this.ForwardAppBarButton.Label = this.appResources.Get("ForwardAppBarButton.Label");
+
         }
 
         private void CreatePopup()
