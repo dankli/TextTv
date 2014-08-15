@@ -5,6 +5,7 @@ using MonoTouch.UIKit;
 using TextTv.Shared.Infrastructure;
 using TextTv.Shared.Infrastructure.Contracts;
 using TextTv.IOS.AppContext;
+using TextTv.IPhoneApp.Infrastructure;
 
 namespace TextTv.IPhoneApp
 {
@@ -15,7 +16,7 @@ namespace TextTv.IPhoneApp
 		SyncPages syncPages;
 		readonly ModeHandler modeHandler;
 		readonly AppResources appResources;
-		readonly INotifierTaskHandler notifierTaskHandler;
+		// readonly INotifierTaskHandler notifierTaskHandler;
 		readonly IHtmlParserFactory htmlParserFactory;
 
 		static bool UserInterfaceIdiomIsPhone {
@@ -27,6 +28,8 @@ namespace TextTv.IPhoneApp
 			this.apiCaller = new ApiCaller ();
 			this.pageNumberHandler = new PageNumberHandler (100);
 			this.appResources = new AppResources (NSLocale.CurrentLocale.LocaleIdentifier);
+			this.modeHandler = new ModeHandler (this.appResources, new LocalSettingsProvider (), null);
+			this.htmlParserFactory = new HtmlParserFactory ();
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -44,10 +47,14 @@ namespace TextTv.IPhoneApp
 					pageNumberHandler.Continue();
 					NavigateTo();
 				})
-				.ParseForView(markup => this.OnUiThread(() => this.webView.LoadHtmlString(markup, null)));
+				.ParseForView(markup => this.OnUiThread(() => 
+					{				
+						this.webView.LoadHtmlString(markup, null);
+
+					}));
 		}
 
-		object OnUiThread (Action action)
+		private void OnUiThread (Action action)
 		{
 			this.InvokeOnMainThread (() => {
 				action();
@@ -68,6 +75,7 @@ namespace TextTv.IPhoneApp
 				// Register a background task to monitor pages.
 			}
 
+			this.NavigateTo ();
 
 			// Load the rendered HTML into the view with a base URL 
 			// that points to the root of the bundled Resources folder
@@ -99,7 +107,7 @@ namespace TextTv.IPhoneApp
 				})
 			}, false);
 
-			this.NavigationController.ToolbarHidden = false;
+//			this.NavigationController.ToolbarHidden = false;
 		}
 
 		public override void ViewWillAppear (bool animated)

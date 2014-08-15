@@ -93,6 +93,7 @@
     <Compile Include="HybridViewController.designer.cs">
       <DependentUpon>HybridViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\LocalSettingsProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -110,5 +111,12 @@
       <Project>{D219BC04-4B18-49AC-8716-59B0B0464E4D}</Project>
       <Name>TextTv.Shared</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TextTv.IOS.AppContext\TextTv.IOS.AppContext.csproj">
+      <Project>{DA33462A-3020-406E-B639-9009ECD25046}</Project>
+      <Name>TextTv.IOS.AppContext</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
   </ItemGroup>
 </Project>

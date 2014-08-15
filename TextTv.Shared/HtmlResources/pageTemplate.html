@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    
+     <meta name="viewport" content="width=device-width; minimum-scale=1.0; maximum-scale=1.0; user-scalable=no">
     <title>
     </title>
     %%styles%%
@@ -44,6 +44,9 @@
 
         var onload = function() {
             myGesture = new MSGesture();
+            if(!myGesture){
+            	return;
+            }
             var element = document.body;
             myGesture.target = element;
 
@@ -55,7 +58,7 @@
     </script>
 
 </head>
-<body onload="onload()">
+<body onload="onload()" style="width: 320px">
     %%content%%
 </body>
 </html>

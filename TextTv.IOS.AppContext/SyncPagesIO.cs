@@ -6,6 +6,7 @@ using TextTv.Shared.Infrastructure.Contracts;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Linq;
+using MonoTouch.Foundation;
 
 namespace TextTv.IOS.AppContext
 {
@@ -90,21 +91,19 @@ namespace TextTv.IOS.AppContext
 
 		private async Task WriteToFile (string content)
 		{
-			using (StreamWriter writer = new StreamWriter (this.file.OpenWrite ())) {
-				var charArray = content.ToCharArray ();	
-				foreach (char c in charArray) {
-					await writer.WriteAsync (c).ConfigureAwait(false);
-				}
-				await writer.FlushAsync ().ConfigureAwait(false);
-			}
+			await Task.Factory.StartNew (() => {
+				File.WriteAllText (this.file.FullName, content);
+			}); 
 		}
 
 		private async Task<string> ReadFromFile ()
 		{
-			using(StreamReader reader = new StreamReader(this.file.OpenRead())){
-				string content = await reader.ReadToEndAsync();
-				return content;
-			}
+			Task<string> task = Task.Factory.StartNew (() => {
+				return File.ReadAllText(this.file.FullName);
+			});
+
+			string content = await task;
+			return content;
 		}
 
 		private Task<FileInfo> CreateFile(DirectoryInfo storageFolder, string fileName){

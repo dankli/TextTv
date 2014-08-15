@@ -16,7 +16,14 @@ namespace TextTv.Shared.Infrastructure
             _localSettings = localSettings;
             WEB_TEXT = appResources.Get("ThemeWeb");
             TV_TEXT = appResources.Get("ThemeTv");
-            _setTextAction = setTextAction;
+			if (setTextAction != null) {
+				_setTextAction = setTextAction;
+			} else {
+				_setTextAction = s => {
+
+				};
+			}
+            
         }
 
         public void Initialize()
